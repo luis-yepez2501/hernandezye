@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+
+ .contenedor {
+        width: 100vw;
+        height: 100vh;
+       background-color: rgb(0, 0, 0);
+   
+   
+       display: grid;
+       grid-template-columns: 25% 50% 25%;
+       grid-template-rows: 10% 80% 10%;
+       grid-template-areas: 'encabezado encabezado encabezado'
+                            'contenido1 contenido2 contenido3' 
+                            'piepagina  piepagina  piepagina';
+   }
+
+.caja{
+    background-color: rgb(112, 112, 255);
+    text-align: center;
+    border: 1xp solid  red;
+}
+
+#encabezado {grid-area: encabezado; background-color: forestgreen;}
+#contenido1 {grid-area: contenido1; background-color: aquamarine;}
+#contendio2 {grid-area: contenido2; background-color: blueviolet;}
+#contenido3 {grid-area: contenido3; background-color: rgb(0, 68, 156);}
+#piepagina {grid-area: piepagina; background-color: brown;}
