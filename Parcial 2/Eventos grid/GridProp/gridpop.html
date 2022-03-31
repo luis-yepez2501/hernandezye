@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gridpop.css">
+</head>
+<body>
+    <div id="idcontene" class="contenedor">
+        <div id="caja1" class="caja">caja1</div>
+        <div id="caja2" class="caja">caja2</div>
+        <div id="caja3" class="caja">caja3</div>
+        <div id="caja4" class="caja">caja4</div>
+        <div id="caja5" class="caja">caja5</div>
+        <div id="caja6" class="caja">caja6</div>
+        <div id="caja7" class="caja">caja7</div>
+        <div id="caja8" class="caja">caja8</div>
+        <div id="caja9" class="caja">caja9</div>
+        </div>
+<script> 
+window.onload = function(){
+    var elem = document.getElementById("idconetene");
+    console.log("elem");
+    elem.addEventListener("click",function(evento) {
+        console.log(evento.target.id);
+
+        if(document.getElementById(evento.target.id).classList.contains("caja"))
+        document.getElementById(evento.target.id).classList.toggle("cajaRoja");
+        
+    });
+}
+</script>    
+</body>
+</html>
