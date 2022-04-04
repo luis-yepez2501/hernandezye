@@ -1,0 +1,86 @@
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .barralateral {
+    position: fixed;
+    background-color: #303030;
+    width: 150px;
+    height: 150%;
+    overflow: auto;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+  }
+  
+  a:hover {
+    background-color: rgba(0, 0, 0,0.3);
+    color: white;
+  }
+  
+  .contenido {
+    background-color: rgb(0, 177, 38);
+    margin-left: 150px;
+    padding: 1px 16px;
+    height: 1500px;
+    color: white;
+    
+  }
+
+  .Menu {
+    width: 0px;
+
+}
+
+.Margen {
+    margin-left: 0px;
+}
+  
+  .Cajas { display: none; }
+  
+  #CAJA1:target,
+  #CAJA2:target,
+  #CAJA3:target,
+  #CAJA4:target,
+  #CAJA5:target { 
+    display: block; 
+    text-align: center;
+    font-size: 15pt;
+  }
+
+  
+  @media screen and (max-width: 1200px) {
+    div.barralateral {
+      position: relative;
+      width: 100%;
+      height: auto;
+      
+    }
+  
+    .barralateral a {float: left;}
+  
+    div.contenido {margin-top: 0;} 
+
+    
+  }
+  
+  @media screen and (max-width: 685px) {
+    .barralateral a {
+      float: none;
+      text-align: center;
+    }
+    
+  }
+
+  
+
+  
