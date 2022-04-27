@@ -1,0 +1,27 @@
+*{
+    box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+.head{
+    background-color: aqua;
+}
+
+.col1{
+    background-color: green;
+}
+
+.col2{
+    background-color: magenta
+}
+
+.col3{
+    background-color: red
+}
+
+.col4{
+    background-color: black
+}
+
