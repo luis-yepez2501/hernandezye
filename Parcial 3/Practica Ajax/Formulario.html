@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Formulario</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="FormMod.js"></script>
+        <link rel="stylesheet"  href="estilo.css">
+<body>
+  <h1 id="encabezado">Compra Boletos de Avion | Aerolinea TECMEX</h1>
+     <div class="container">
+        <form class="form">
+            <button id="botonAjax" type="button" class="btn btn-primary">Modificar Header</button>
+            <img src="https://www.itguaymas.edu.mx/img/logo_tecnm_2.png">
+            
+        
+          <div style = "text-align: center"></div>
+          <div class="row">
+            <label for="nombrecompleto" class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" id="nombrecompleto" placeholder="Nombre">
+          </div>
+
+        <div class="row">
+            <label for="numerotel" class="form-label">Numero telefonico</label>
+            <input type="text" class="form-control" id="numerotel" placeholder="Ej. (+52) 867 123 45 67">
+        </div>
+
+        <div class="row">
+            <label for="estado" class="form-label">Seleccione el Destino</label>
+            <select class="form-select" aria-label="Seleccione el Destino">
+            
+            <option selected>Seleccionar</option>
+            <option value="1">Dubai</option>
+            <option value="2">Honduras</option>
+            <option value="3">Paris</option>
+            <option value="4">España</option>
+            <option value="5">Japon</option>
+            <option value="6">Alemania</option>
+            <option value="7">Korea Del Norte</option>
+            <option value="8">Korea Del Sur</option>
+            <option value="9">CDMX</option>
+            <option value="10">Estados Unidos</option>
+            <option value="11">Andorra</option>
+            <option value="12">Belgica</option>
+            <option value="13">China</option>
+            <option value="14">Turquia</option>
+            <option value="15">Argentina</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label for="asiento" class="form-label">Seleccione el Asiento</label>
+            <select class="form-select" aria-label="Seleccione el asiento">
+            
+            <option selected>Seleccionar</option>
+            <option value="1">Primera Clase</option>
+            <option value="2">Clase normal</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label for="pago" class="form-label">Tipo de pago</label>
+            <select class="form-select" aria-label="Seleccione el pago">
+            
+            <option selected>Seleccionar</option>
+            <option value="1">VISA/TARJETA DE CREDITO-DEBITO</option>
+            <option value="2">Efectivo</option>
+            <option value="2">Transferencia</option>
+            </select>
+        </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6  col-lg-3">
+        <label for="Fechaida" class="control-label">Fecha de ida</label>
+            <input id="Fechaidatype="text" class="form-control" placeholder="dd/mm/aaaa"/>
+    </div>
+    <div class="col-sm-12 col-md-6  col-lg-9">
+        <label for="Correo" class="form-label">Correo Electronico</label>
+            <input type="text" class="form-control" id="correo" placeholder="micorreo@gmail.com">
+    </div>
+</div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6  col-lg-3">
+            <label for="Fechare" class="control-label">Fecha de regreso</label>
+        <input id="Fechare" type="text" class="form-control" placeholder="dd/mm/aaaa"/>
+    </div>
+    <div class="col-sm-12 col-md-6  col-lg-9">
+        <label for="cp" class="form-label">En caso de ser menor de edad. Colocar el nombre de el encargo del menor
+            en el cuadro siguiente:
+        </label>
+            <input type="text" class="form-control" id="cp" placeholder="Nombre">
+    </div>
+</div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="ckbxterminos">
+            <label class="form-check-label" for="terminos">Acepto los terminos y condiciones</label> <link href="">
+        </div>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Comprar Boletos
+          </button>
+          <button type="reset" class="btn btn-default">Limpiar</button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Esta seguro de comprar los boletos?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Si, comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+     </div>
+
+     <button id="botonAlerta" type="button" class="btn btn-primary">Alerta</button>
+       <button id="botonJS" type="button" class="btn btn-primary">JS</button>
+       <button id="botonSweet" type="button" class="btn btn-primary">Sweet</button>
+    
+       <div id="ventanaAlerta" class="alert alert-primary alert-dismissible collapse" role="alert">
+        A simple primary alert—check it out!
+        <button id="botonCerrarAlerta" type="button" class="close" aria-hidden="true" >
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+    </form>
+</body>
+</html>
