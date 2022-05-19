@@ -1,12 +1,14 @@
 <?php
 
-$registro['num1'] ='Un medio ambiente limpio es fuente de satisfacción';
-$registro['num2'] ='Cuidar el medio ambiente es cuidarnos a nosotros mismos, uno no está separado del otro';
-$registro['num3'] ='Ahorrar recursos con los que tengas contacto diario';
-$registro['num4'] ='Reciclaje de papel, Reciclaje de vidrio';
-$registro['num5'] ='Reducir los envases o productos de usar y tirar';
-$registro['num6'] ='Compra solo lo que necesitas';
+$registro['num1'] ='Luis Francisco Hernandez Yepez';
+$registro['num2'] ='123456789';
+$registro['num3'] ='yepezluis279@gmail.com';
+$registro['num4'] ='Encargado Del Menor';
+$registro['num5'] ='12/25/99';
+$registro['num6'] ='02/15/00';
 
 $registroJson = json_encode($registro);
-echo $registroJson
+
+echo $registroJson;
+
 ?>
