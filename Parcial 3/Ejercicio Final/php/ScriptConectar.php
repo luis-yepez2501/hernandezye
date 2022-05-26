@@ -18,7 +18,7 @@ try{
 //$con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 try{
-    $consultaSql = "select *from Campos".$paridCte;
+    $consultaSql = "select idnombre,numerotel,fechaida,correo,fechare,nencargado".$paridCte;
     $consulta = $con ->prepare($consultaSql);
     $consulta->execute();
     $resultado = $consulta->fetch(PDO::FETCH_ASSOC);

@@ -6,12 +6,12 @@ try {
     $query->execute();
 
     while($row = $query->fetch()){
-        echo $row['nombre'].'-'.
-        $row['numerotel'].'-'.
-        $row['fechaida'].'-'.
-        $row['correo'].'-'.
-        $row['fechare'].'-'.
-        $row['nencargado'].'-';
+        echo $row['idnombre'].'/'.
+        $row['numerotel'].'/'.
+        $row['fechaida'].'/'.
+        $row['correo'].'/'.
+        $row['fechare'].'/'.
+        $row['nencargado'].'<br>';
     }
     $query->closeCursor();
 
