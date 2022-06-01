@@ -2,7 +2,7 @@
 
 $vIdnombre = $_POST['nom'];
 $vNumerotel = $_POST['num'];
-$vFechaida = $_POST['feida'];
+$vFechaida = $_POST['feid'];
 $vCorreo  = $_POST['cor'];
 $vFechare  = $_POST['fere'];
 $vNencargado  = $_POST['nen'];
