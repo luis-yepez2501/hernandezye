@@ -1,4 +1,15 @@
 $(document).ready(function(){
+
+    btneliminar.disabled=true;
+    btninsertar.disabled=true;
+    btnmodificar.disabled=true;
+    idnombre.disabled=true;
+    numerotel.disabled=true;
+    fechaida.disabled=true;
+    correo.disabled=true;
+    fechare.disabled=true;
+    nencargado.disabled=true;
+
     $('#botonAjax').click(function(){
             var solicitud = new XMLHttpRequest();
             solicitud.onreadystatechange = function() {
@@ -7,30 +18,109 @@ $(document).ready(function(){
             }};
             solicitud.open("GET", "texto.txt", true);
             solicitud.send();
-                       
-            
-           
     });
 
-    $('#botonguardar').click(function() {
-        swal({
-            title: "Compra realizada",
-            text: "Se compraron sus boletos de avion!",
-            icon: "success",
+    // $('#botonguardar').click(function() {
+    //     swal({
+    //         title: "Compra realizada",
+    //         text: "Se compraron sus boletos de avion!",
+    //         icon: "success",
 
+    //     });
+    // });
+
+    $('#btneliminar').click( function() {
+        var vid = $('#idnombre').val();
+
+        if (confirm('Eliminar')) {
+            $.post('./php/ScriptEliminar.php',
+            {idnombre: vid},
+            function (ret) {
+                alert("Borrado");
+                btneliminar.disabled=true;
+                btninsertar.disabled=true;
+            },'json');
+            $('input').val('');
+        } else {
+            alert("No se borra");
+        }
+    });
+
+    $('#btninsertar').click(function() {
+        var vnom = $('#idnombre').val();
+        var vnum = $('#numerotel').val();
+        var vfeid = $('#fechaida').val();
+        var vcor = $('#correo').val();
+        var vfere = $('#fechare').val();
+        var vdnen = $('#nencargado').val();
+
+        $.post('php/ScriptInsertar.php',
+                {nom: vnom, num: vnum, feid: vfeid, cor: vcor, fere: vfere, nen: vdnen},
+                function (ret) {
+
+                if (ret['resultado'] != 0) {
+
+                console.log('Error Insercion');
+                alert('ERROR');
+                }
+                else {
+                alert('Se ha insertado correctamentw');
+            }
+        },'json');
+        swal("Se ha insertado correctamente.");
+        btneliminar.disabled=false;
+      });
+      
+
+      $('#btnnuevo').click(function() {
+        btninsertar.disabled=false;
+        btnmodificar.disabled=false;
+        idnombre.disabled=false;
+        numerotel.disabled=false;
+        fechaida.disabled=false;
+        correo.disabled=false;
+        fechare.disabled=false;
+        nencargado.disabled=false;
+      });
+
+      $('#reset').click(function() {
+        btneliminar.disabled=true;
+        btninsertar.disabled=true;
+      });
+
+
+      $('#btnmodificar').click(function() {
+        var vnom = $('#idnombre').val();
+        var vnum = $('#numerotel').val();
+        var vfeid = $('#fechaida').val();
+        var vcor = $('#correo').val();
+        var vfere = $('#fechare').val();
+        var vdnen = $('#nencargado').val();
+
+        $.post('php/ScriptModificar.php',
+                {nom: vnom, num: vnum, feid: vfeid, cor: vcor, fere: vfere, nen: vdnen},
+                function (ret) {
+
+                if (ret['resultado'] != 0) {
+
+                console.log('Error');
+                alert('ERROR');
+                }
+                else {
+                alert('Se ha modificado correctamentw');
+            }
+        },'json');
+        swal("Se ha modificado correctamente.");
+        btneliminar.disabled=false;
         });
-    });
-// $('#btnconsulta').click(function(){
-//     let varId= prompt("Consulta el nombre de la persona que compro el boleto");
-//     $('modal1').modal();
-//     $('modal1').on('hidden.bs.modal',function(e){
-//         $.post('./php/ScriptConsulta.php',{par1:varId},function(data){
-//             refrescar(data);
-//             },'json');
-//     }
-//     )
-//     });
 });
+
+
+
+
+
+
+
     $("#btnconsulta").click(function () {
         $('input').val('');
         var vidu = prompt("Para consultar, coloque el nombre completo:");
@@ -75,6 +165,7 @@ $(document).ready(function(){
                 $("#modalMensaje").on('hidden.bs.modal', function () {
                     $('#myModal .modal-header').removeClass('modal-header-success');
                 });
+                btneliminar.disabled=false;
             }
         },'json');
     });
