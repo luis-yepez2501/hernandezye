@@ -44,6 +44,14 @@ $(document).ready(function(){
         } else {
             alert("No se borra");
         }
+
+        idnombre.disabled=true;
+    numerotel.disabled=true;
+    fechaida.disabled=true;
+    correo.disabled=true;
+    fechare.disabled=true;
+    nencargado.disabled=true;
+    btnmodificar.disabled=true;
     });
 
     $('#btninsertar').click(function() {
@@ -81,6 +89,7 @@ $(document).ready(function(){
         correo.disabled=false;
         fechare.disabled=false;
         nencargado.disabled=false;
+        idnombre.focus();
       });
 
       $('#reset').click(function() {
